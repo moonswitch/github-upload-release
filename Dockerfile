@@ -17,3 +17,4 @@ RUN \
   go get -u github.com/tcnksm/ghr
 
 ENTRYPOINT [ "ghr" ]
+CMD ["$(echo $GITHUB_REF | cut -d'/' -f3')","$GITHUB_WORKSPACE/.release"]
